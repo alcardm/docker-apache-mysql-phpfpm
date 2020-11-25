@@ -1,4 +1,4 @@
-FROM httpd:2.4
+FROM httpd:2.4-alpine
 
 ARG WEB_USER
 ARG WEB_GROUP

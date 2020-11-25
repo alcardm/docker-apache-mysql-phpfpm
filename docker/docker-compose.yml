@@ -50,7 +50,7 @@ services:
         - PHP_ROOT_DIR=${PHP_ROOT_DIR}
     working_dir: ${PHP_APP_DIR}
     volumes:
-      - ..:${PHP_APP_DIR}
+      - ${PHP_SOURCE_DIR}:${PHP_APP_DIR}
       - ../logs/php:${PHP_ROOT_DIR}/logs
     depends_on:
       - apache_img

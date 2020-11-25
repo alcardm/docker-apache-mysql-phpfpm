@@ -1,4 +1,4 @@
-FROM php:7.1-fpm
+FROM php:7.4-fpm-alpine
 
 ARG WEB_USER
 ARG WEB_GROUP
@@ -8,6 +8,6 @@ COPY www.conf ${PHP_ROOT_DIR}/php-fpm.d/www.conf
 
 RUN docker-php-ext-install mysqli
 
-RUN usermod -u 1000 ${WEB_USER} \
-    && groupmod -g 1000 ${WEB_GROUP} \
-    && chgrp -R staff ${PHP_ROOT_DIR}/php-fpm.d/www.conf
+#RUN usermod -u 1000 ${WEB_USER} \
+#   && groupmod -g 1000 ${WEB_GROUP} \
+#   && chgrp -R staff ${PHP_ROOT_DIR}/php-fpm.d/www.conf
