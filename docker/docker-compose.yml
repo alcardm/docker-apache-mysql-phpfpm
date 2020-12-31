@@ -23,23 +23,6 @@ services:
       - PHP_APP_DIR=${PHP_APP_DIR}
       - WEB_USER=${WEB_USER}
       - WEB_GROUP=${WEB_GROUP}
-  mysql_img:
-    container_name: ${COMPOSE_PROJECT_NAME}_mysql_con
-    build:
-      context: ./mysql
-      args:
-        - MYSQL_CONTAINER_USER=${MYSQL_CONTAINER_USER}
-        - MYSQL_CONTAINER_GROUP=${MYSQL_CONTAINER_GROUP}
-    volumes:
-      - ../logs/mysql:${MYSQL_LOG_DIR}
-      - ../database:${MYSQL_DATA_DIR}
-    networks:
-      public_net:
-        ipv4_address: ${MYSQL_IP}
-    environment:
-      - MYSQL_CONTAINER_USER=${MYSQL_CONTAINER_USER}
-      - MYSQL_CONTAINER_GROUP=${MYSQL_CONTAINER_GROUP}
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
   php_img:
     container_name: ${COMPOSE_PROJECT_NAME}_php_con
     build:
@@ -54,7 +37,6 @@ services:
       - ../logs/php:${PHP_ROOT_DIR}/logs
     depends_on:
       - apache_img
-      - mysql_img
     networks:
       public_net:
         ipv4_address: ${PHP_IP}

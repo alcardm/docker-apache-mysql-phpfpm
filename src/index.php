@@ -1,14 +1,21 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-echo '<h1>Hello World!</h1>' . PHP_EOL;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola mundo!</title>
+</head>
 
-$servername = getenv('MYSQL_IP');
-$username = getenv('MYSQL_ROOT_USER');
-$password = getenv('MYSQL_ROOT_PASSWORD');
+<body>
+    <h1>Hola mundo!</h1>
 
-$conn = mysqli_connect($servername, $username, $password);
-if (!$conn) {
-    exit('Connection failed: ' . mysqli_connect_error() . PHP_EOL);
-}
+    <img src="photo.png" />
+    
+    <hr>
 
-echo '<p>Successful database connection!<p>' . PHP_EOL;
+    <?php phpinfo(); ?>
+
+</body>
+
+</html>

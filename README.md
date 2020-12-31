@@ -2,6 +2,13 @@
 [(Via)](http://www.inanzzz.com/index.php/post/su76/creating-apache-mysql-and-php-fpm-containers-for-a-web-application-with-docker-compose)
 ---
 
+## ingress-controller About this branch
+I'm trying to configure a ingress controller based on *main* branch.
+
+Doesn't include MySQL docker image
+
+Need to include a *nginx* image as ingress controller.
+
 ## Issues
 Lines added at *docker/apache/httpd.conf* [(via)](https://stackoverflow.com/a/48717418) **Working**
 ```
