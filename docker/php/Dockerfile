@@ -53,4 +53,4 @@ RUN docker-php-ext-enable opcache
 # https://wordpress.org/support/article/editing-wp-config-php/#configure-error-logging
 COPY error-logging.ini /usr/local/etc/php/conf.d/
 
-RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/conf.d/php.ini
+COPY php.ini /usr/local/etc/php/conf.d/
